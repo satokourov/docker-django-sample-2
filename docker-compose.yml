@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mysql:
+    build: ./setting/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    volumes:
+      - db:/var/lib/mysql
+  web:
+    build: ./setting/web
+    command: python manage.py runserver 0.0.0.0:80
+    volumes:
+      - .:/code
+    ports:
+      - "80:80"
+    links:
+      - mysql
+volumes:
+  db:
