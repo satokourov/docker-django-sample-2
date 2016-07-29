@@ -48,7 +48,6 @@ python manage.py migrate
 ```
 
 ８．サーバを起動  
-　※ホスト側で実行
 ```bash
 docker-compose restart
 ```
@@ -73,3 +72,8 @@ POLLSというのがサンプルアプリになります。Questionsテーブル
 １１．アプリ画面にアクセス  
 http://localhost/polls/  
 管理画面で登録した内容が表示されているはずです。
+
+１２．終わるには  
+```bash
+docker-compose stop
+```
