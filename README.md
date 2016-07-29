@@ -25,8 +25,8 @@ docker ps
 docker exec -it mysql bash
 ```
 
-５．mysqlにログインしデータベースを作成
-　※今回は「mysite」というDBを作成
+５．mysqlにログインしデータベースを作成  
+　※今回は「mysite」というDBを作成  
 　※mysqlコンテナにログインした状態で実行
 ```bash
 mysql -p
@@ -39,21 +39,21 @@ create database mysite CHARACTER SET utf8;
 docker exec -it web bash
 ```
 
-７．「５」で作ったデータベースにテーブルを作る
-　※webコンテナにログインした状態で実行
-　※Djangoプロジェクトは「/code」にあります
+７．「５」で作ったデータベースにテーブルを作る  
+　※webコンテナにログインした状態で実行  
+　※Djangoプロジェクトは「/code」にあります  
 ```bash
 cd /code/
 python manage.py migrate
 ```
 
-８．サーバを起動
+８．サーバを起動  
 　※ホスト側で実行
 ```bash
 docker-compose restart
 ```
 
-９．管理サイトに入るアカウントを設定
+９．管理サイトに入るアカウントを設定  
 　※webコンテナにログインして作成
 ```bash
 docker exec -it web bash
@@ -65,11 +65,11 @@ $ Password: #任意
 $ Password (again): #再入力
 ```
 
-１０．管理画面にアクセス
-http://localhost/admin/login/
-※先ほど設定したID/PASSでログイン出来ます
+１０．管理画面にアクセス  
+http://localhost/admin/login/  
+※先ほど設定したID/PASSでログイン出来ます  
 POLLSというのがサンプルアプリになります。Questionsテーブルに何か追加してください。
 
-１１．アプリ画面にアクセス
-http://localhost/polls/
+１１．アプリ画面にアクセス  
+http://localhost/polls/  
 管理画面で登録した内容が表示されているはずです。
