@@ -1,5 +1,7 @@
 # docker-django-sample-2
-DockerでDjangoのチュートリアルアプリを作成
+Djangoとはを知るためにチュートリアルアプリを作成しました。  
+環境をDockerにしているところ以外は下記サイトの通りです。  
+https://docs.djangoproject.com/ja/1.9/intro/tutorial01/
 
 ## 初回設定
 １．適当なフォルダにクローン
@@ -63,6 +65,11 @@ $ Password: #任意
 $ Password (again): #再入力
 ```
 
+１０．管理画面にアクセス
+http://localhost/admin/login/
+※先ほど設定したID/PASSでログイン出来ます
+POLLSというのがサンプルアプリになります。Questionsテーブルに何か追加してください。
 
-```bash
-```
+１１．アプリ画面にアクセス
+http://localhost/polls/
+管理画面で登録した内容が表示されているはずです。
