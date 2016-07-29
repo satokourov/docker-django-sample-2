@@ -1,6 +1,7 @@
 # docker-django-sample-2
 DockerでDjangoのチュートリアルアプリを作成
 
+## 初回設定
 １．適当なフォルダにクローン
 ```bash
 git clone https://github.com/satokourov/docker-django-sample-2.git
@@ -17,31 +18,49 @@ docker-compose up -d
 docker ps
 ```
 
+４．mysqlコンテナにログインして起動
 ```bash
+docker exec -it mysql bash
 ```
 
-
+５．mysqlにログインしデータベースを作成
+　※今回は「mysite」というDBを作成
+　※mysqlコンテナにログインした状態で実行
 ```bash
+mysql -p
+(pass)
+create database mysite CHARACTER SET utf8;
 ```
 
-
+６．webコンテナにログイン
 ```bash
+docker exec -it web bash
 ```
 
-
+７．「５」で作ったデータベースにテーブルを作る
+　※webコンテナにログインした状態で実行
+　※Djangoプロジェクトは「/code」にあります
 ```bash
+cd /code/
+python manage.py migrate
 ```
 
-
+８．サーバを起動
+　※ホスト側で実行
 ```bash
+docker-compose restart
 ```
 
-
+９．管理サイトに入るアカウントを設定
+　※webコンテナにログインして作成
 ```bash
-```
-
-
-```bash
+docker exec -it web bash
+cd /code/ 
+python manage.py createsuperuser
+$ Username (leave blank to use 'root'): #任意
+$ Email #任意
+$ Password: #任意
+$ Password (again): #再入力
 ```
 
 
