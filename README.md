@@ -77,3 +77,8 @@ http://localhost/polls/
 ```bash
 docker-compose stop
 ```
+
+補足：２回目以降は以下で起動
+```bash
+docker-compose up -d
+```
